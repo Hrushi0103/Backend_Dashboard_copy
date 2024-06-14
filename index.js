@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose"); // If using MongoDB, ensure mongoose is configured properly
 const userRoutes = require("./routes/routes");
@@ -5,7 +6,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const cors = require("cors");
 const db = require("./configs/db");
-const port = 3100;
+const port = process.env.PORT || 3100;
 
 // Initialize the app
 const app = express();
